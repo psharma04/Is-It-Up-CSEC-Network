@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>Is It Up? - CSEC Network</title>
+<!-- link type="text/css" rel="stylesheet" href="https://rbxii3.com/style1.css" -->
+<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+<script>
+//This defines the uptime checker. This tool uses the favicon.ico of a website to see if it is online or not.
+function isSiteOnline(url,callback) {
+    // try to load favicon.ico
+    var timer = setTimeout(function(){
+        // timeout after 10 seconds
+        callback(false);
+    },10000)
+
+    var img = document.createElement("img");
+    img.onload = function() {
+        clearTimeout(timer);
+        callback(true);
+    }
+
+    img.onerror = function() {
+        clearTimeout(timer);
+        callback(false);
+    }
+
+    img.src = url+"/favicon.ico";
+}
+</script>
+<!-- Between the scripts is the Visible section, laid out as a table -->
+<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100">
+					<h1 style="text-align:center">CSEC Network Uptime Checker</h1>
+					<br>
+					<table>
+						<thead>
+							<tr class="table100-head">
+								<th class="column1">Site</th>
+								<th class="column2">Status</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="column1">Root Website</td>
+								<td class="column2"><p id="root"></p>
+							</tr>
+							<tr>
+								<td class="column1">Main Webpage</td>
+								<td class="column2"><p id="web"></p>
+							</tr>
+							<tr>
+								<td class="column1">School Bells</td>
+								<td class="column2"><p id="bells"></p>
+							</tr>
+							<tr>
+								<td class="column1">Science Notes</td>
+								<td class="column2"><p id="sciencenotes"></p>
+							</tr>
+						</tbody>
+					</table>
+					<br>
+					<p style="text-align: center"><button type="button" class="btn btn-secondary"><a href="mailto:newsite.uptime@rbxii3.net">Request a New Site</a></button></p>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+//Copy this script block, changing the URL to test a new site.
+isSiteOnline("https://rbxii3.net",function(found){
+    if(found) {
+        document.getElementById("root").innerHTML="Online"
+    }
+    else {
+        document.getElementById("root").innerHTML="Offline"
+    }
+})
+</script>
+
+<script>
+isSiteOnline("https://rbxii3.com",function(found){
+    if(found) {
+        document.getElementById("web").innerHTML="Online"
+    }
+    else {
+        document.getElementById("web").innerHTML="Offline"
+    }
+})
+</script>
+
+<script>
+isSiteOnline("https://smcc-bells.rbxii3.net",function(found){
+    if(found) {
+        document.getElementById("bells").innerHTML="Online"
+    }
+    else {
+        document.getElementById("bells").innerHTML="Offline"
+    }
+})
+</script>
+
+<script>
+isSiteOnline("https://sciencenotes.rbxii3.net",function(found){
+    if(found) {
+        document.getElementById("sciencenotes").innerHTML="Online"
+    }
+    else {
+        document.getElementById("sciencenotes").innerHTML="Offline"
+    }
+})
+</script>
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="vendor/select2/select2.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
