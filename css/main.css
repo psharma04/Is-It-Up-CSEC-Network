@@ -261,22 +261,22 @@ tbody tr:hover {
     top: 0;
   }
   table tbody tr td:nth-child(1):before {
-    content: "Date";
+    content: "Site";
   }
   table tbody tr td:nth-child(2):before {
-    content: "Order ID";
+    content: "Status";
   }
   table tbody tr td:nth-child(3):before {
-    content: "Name";
+    content: "Notes";
   }
   table tbody tr td:nth-child(4):before {
-    content: "Price";
+    content: "Nothing";
   }
   table tbody tr td:nth-child(5):before {
-    content: "Quantity";
+    content: "Nothing";
   }
   table tbody tr td:nth-child(6):before {
-    content: "Total";
+    content: "Nothing";
   }
 
   .column4,
