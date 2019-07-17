@@ -61,6 +61,10 @@ function isSiteOnline(url,callback) {
 								<td class="column2"><p id="web"></p>
 							</tr>
 							<tr>
+								<td class="column1">CSEC Content Delivery Network</td>
+								<td class="column2"><p id="cdn"></p>
+							</tr>
+							<tr>
 								<td class="column1">School Bells</td>
 								<td class="column2"><p id="bells"></p>
 							</tr>
@@ -98,7 +102,16 @@ isSiteOnline("https://rbxii3.com",function(found){
     }
 })
 </script>
-
+<script>
+isSiteOnline("https://csec-cdn.intranet.pw",function(found){
+    if(found) {
+        document.getElementById("cdn").innerHTML="Online"
+    }
+    else {
+        document.getElementById("cdn").innerHTML="Offline"
+    }
+})
+</script>
 <script>
 isSiteOnline("https://smcc-bells.rbxii3.net",function(found){
     if(found) {
