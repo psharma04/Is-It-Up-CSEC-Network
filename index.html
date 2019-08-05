@@ -72,6 +72,10 @@ function isSiteOnline(url,callback) {
 								<td class="column1">Science Notes</td>
 								<td class="column2"><p id="sciencenotes"></p>
 							</tr>
+							<tr>
+								<td class="column1">School Notes</td>
+								<td class="column2"><p id="schoolnotes"></p>
+							</tr>
 						</tbody>
 					</table>
 					<br>
@@ -99,6 +103,16 @@ isSiteOnline("https://rbxii3.com",function(found){
     }
     else {
         document.getElementById("web").innerHTML="Offline"
+    }
+})
+</script>
+<script>
+isSiteOnline("https://www.schoolnotes.intranet.pw",function(found){
+    if(found) {
+        document.getElementById("schoolnotes").innerHTML="Online"
+    }
+    else {
+        document.getElementById("schoolnotes").innerHTML="Offline"
     }
 })
 </script>
